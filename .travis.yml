@@ -1,16 +1,4 @@
 language: php
-php:
-  - 5.5
-  - 5.4
-  - hhvm
-#script: phpunit Test.php
-# script: phpunit Test2.php
-#script: phpunit --coverage-clover=coverage.clover
-
-script:
-  - phpunit --coverage-clover=coverage.clover
-
-after_script:language: php
 
 php:
   - 5.5
@@ -37,12 +25,3 @@ script:
 
 after_script:
   - if [[ $TRAVIS_PHP_VERSION != 'hhvm' && $TRAVIS_PHP_VERSION != '7.0' ]]; then php vendor/bin/ocular code-coverage:upload --format=php-clover coverage.clover; fi
-
-  - wget https://scrutinizer-ci.com/ocular.phar
-  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
-
-#after_script:
-#    - wget https://scrutinizer-ci.com/ocular.phar
-#    - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
-
-sudo: false
