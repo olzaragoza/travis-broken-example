@@ -8,12 +8,10 @@ php:
 sudo: false
 
 script:
-
-    - phpunit --configuration build
+    - phpunit --coverage-clover /tmp/coverage.clover
+    - wget https://scrutinizer-ci.com/ocular.phar
+    - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
 
 notifications:
   email: false
 
-phpunit --coverage-clover=coverage.clover
-wget https://scrutinizer-ci.com/ocular.phar
-php ocular.phar code-coverage:upload --format=php-clover coverage.clover
