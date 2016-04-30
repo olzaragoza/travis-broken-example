@@ -2,13 +2,16 @@ language: php
 
 php:
     - 5.6
-    - 7.0
-    - nightly
+#    - 7.0
+#    - nightly
 
 sudo: true
 
 script:
-    - phpunit --coverage-php /tmp/coverage.php
+    - phpunit --coverage-clover=coverage.clover test.php
+    - wget https://scrutinizer-ci.com/ocular.phar
+    - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+    
  #   - wget https://scrutinizer-ci.com/ocular.phar
  #   - php ocular.phar code-coverage:upload --format=php /tmp/coverage.php
 
