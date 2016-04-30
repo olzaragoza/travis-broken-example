@@ -14,14 +14,5 @@ checks:
         duplicate_code: true
 
 tools:
-    external_code_coverage: false
-    php_code_coverage: true
-
-build:
-    tests:
-        override:
-            -
-                command: phpunit --coverage-clover
-                coverage:
-                    file: coverage.clover
-                    format: php-clover
+    external_code_coverage: true
+        timeout: 600
