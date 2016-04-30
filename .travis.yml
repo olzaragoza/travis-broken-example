@@ -9,7 +9,7 @@ sudo: false
 
 script:
 
-    - vendor/bin/phpunit --configuration build
+    - phpunit --configuration build
 
 notifications:
   email: false
