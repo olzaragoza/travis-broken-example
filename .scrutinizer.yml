@@ -14,4 +14,5 @@ checks:
         duplicate_code: true
 
 tools:
-    external_code_coverage: true
+    external_code_coverage: false
+    php_code_coverage: true
