@@ -8,9 +8,9 @@ php:
 sudo: false
 
 script:
-    - phpunit --coverage-clover /tmp/coverage.clover
+    - phpunit --coverage-php coverage.php
     - wget https://scrutinizer-ci.com/ocular.phar
-    - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+    - php ocular.phar code-coverage:upload --format=php coverage.clover
 
 notifications:
   email: false
