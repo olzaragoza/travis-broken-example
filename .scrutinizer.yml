@@ -14,5 +14,5 @@ checks:
         duplicate_code: true
 
 tools:
-    external_code_coverage: true
-        timeout: 600
+    external_code_coverage:
+        timeout: 300
