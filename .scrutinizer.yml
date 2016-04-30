@@ -18,7 +18,10 @@ tools:
     php_code_coverage: true
 
 build:
-    tests:
-        override:
-            -
-                command: phpunit --coverage-clover clover
+  tests:
+    override:
+      -
+        command: 'bin/phpspec run -f progress -c phpcpec-ci.yml'
+        coverage:
+          file: 'coverage.clover'
+          format: 'php-clover'
