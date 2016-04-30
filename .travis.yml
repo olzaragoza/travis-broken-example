@@ -18,7 +18,6 @@ before_script:
   - travis_retry composer self-update
 
 script:
-  - composer validate
   - mkdir -p build/logs
   - phpunit --coverage-text --coverage-clover=coverage.clover
 
